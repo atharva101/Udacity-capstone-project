@@ -63,15 +63,15 @@ pipeline {
 			}
 		}
 
-		// stage('Set current kubectl context') {
-		// 	steps {
-		// 		withAWS(region:'us-west-2', credentials:'aws-creds') {
-		// 			sh '''
-		// 				kubectl config use-context arn:aws:eks:us-west-2:134748528531:cluster/capstone-udacity
-		// 			'''
-		// 		}
-		// 	}
-		// }
+		stage('Set current kubectl context') {
+			steps {
+				withAWS(region:'us-west-2', credentials:'aws-creds') {
+					sh '''
+						kubectl config use-context arn:aws:eks:us-west-2:134748528531:cluster/capstone-project
+					'''
+				}
+			}
+		}
 
 		// stage('Deploy blue container') {
 		// 	steps {
